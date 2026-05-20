@@ -1,2 +1,3 @@
-# SUNINHospital-3.0
+# SUNIB Hospital 3.0
+
 Final Project Data Structure
