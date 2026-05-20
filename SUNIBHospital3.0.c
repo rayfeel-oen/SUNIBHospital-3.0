@@ -13,7 +13,7 @@ struct patient* createPatient(int id){
     newPatient->id = id;
     newPatient->left = NULL;
     newPatient->right = NULL;
-    newPatient->height = 1; // New patients are initially added as leaf nodes
+    newPatient->height = 1;
     return newPatient;
 }
 
