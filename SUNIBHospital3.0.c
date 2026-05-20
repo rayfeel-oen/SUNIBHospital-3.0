@@ -7,3 +7,13 @@ struct patient{
     struct patient *right;
     int height;
 };
+
+struct patient* createPatient(int id){
+    struct patient* newPatient = (struct patient*)malloc(sizeof(struct patient));
+    newPatient->id = id;
+    newPatient->left = NULL;
+    newPatient->right = NULL;
+    newPatient->height = 1; // New patients are initially added as leaf nodes
+    return newPatient;
+}
+
