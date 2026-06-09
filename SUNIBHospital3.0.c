@@ -480,7 +480,7 @@ void menu() {
     printf(C_YELLOW C_BOLD "  [||]  1 ||  Insert Patient + Prescription  [||]\n" C_RESET);
     printf(C_WHITE        "  [||]  2 ||  View All Patients             [||]\n" C_RESET);
     printf(C_WHITE        "  [||]  3 ||  View Patients by ID Prefix    [||]\n" C_RESET);
-    printf(C_WHITE        "  [||]  4 ||  Search Patient        [TEMAN] [||]\n" C_RESET);
+    printf(C_WHITE        "  [||]  4 ||  Search Patient                [||]\n" C_RESET);
     printf(C_WHITE        "  [||]  5 ||  Delete a Patient              [||]\n" C_RESET);
     printf(C_RED          "  [||]  6 ||  Exit                          [||]\n" C_RESET);
     printf(C_CYAN "  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n" C_RESET);
@@ -537,6 +537,7 @@ int main() {
                     }
                 }
                 printf(C_YELLOW "\n  Press Enter to continue..." C_RESET);
+                getchar();
                 getchar();
                 break;
             }
