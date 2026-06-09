@@ -3,9 +3,6 @@
 #include <string.h>
 #include <stdbool.h>
 #include <ctype.h>
-#define NOMINMAX
-#define WIN32_LEAN_AND_MEAN
-#include <windows.h>
 
 #define C_RESET   "\033[0m"
 #define C_BOLD    "\033[1m"
@@ -14,6 +11,24 @@
 #define C_YELLOW  "\033[33m"
 #define C_RED     "\033[31m"
 #define C_WHITE   "\033[97m"
+
+// Universal Windows and UNIX (Suggested by Sonnet 4.6 Low)
+#ifdef _WIN32
+    #include <windows.h>
+    #define sleep_ms(ms) Sleep(ms)
+#else
+    #include <unistd.h>
+    #define sleep_ms(ms) usleep((ms) * 1000)
+#endif
+
+#ifdef _WIN32
+    #define clear_screen() system("cls")
+#else
+    #define clear_screen() system("clear")
+#endif
+
+// And replace all Sleep() calls with sleep_ms().
+// system("cls") with clear_screen().
 
 typedef struct Node {
     int key;
@@ -138,10 +153,12 @@ Node* insert(Node* node, int key) {
 }
 
 void enableANSI() {
+#ifdef _WIN32
     HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
-    DWORD mode  = 0;
+    DWORD mode = 0;
     GetConsoleMode(hOut, &mode);
     SetConsoleMode(hOut, mode | ENABLE_VIRTUAL_TERMINAL_PROCESSING);
+#endif
 }
 
 void loadingAnimation(const char* msg, int durationMs) {
@@ -150,7 +167,7 @@ void loadingAnimation(const char* msg, int durationMs) {
     for (int i = 0; i < steps; i++) {
         printf("\r  " C_CYAN "[%c]" C_RESET " %s", frames[i % 4], msg);
         fflush(stdout);
-        Sleep(100);
+        sleep_ms(100);
     }
     printf("\r  " C_GREEN "[v]" C_RESET " %s - Done!\n", msg);
 }
@@ -273,7 +290,7 @@ void inorderAll(Node* root, int counter[]) {
 }
 
 void viewAll(Node* root) {
-    system("cls");
+    clear_screen();
     printHeader();
     printSectionTitle("ALL REGISTERED PATIENTS");
 
@@ -312,7 +329,7 @@ void inorderPrefix(Node* root, const char* prefix, int prefixLen, int counter[])
 }
 
 void viewByPrefix(Node* root) {
-    system("cls");
+    clear_screen();
     printHeader();
     printSectionTitle("VIEW PATIENTS BY ID PREFIX");
 
@@ -392,7 +409,7 @@ Node* deleteNode(Node* root, int key) {
 }
 
 void deletePatient(Node** root) {
-    system("cls");
+    clear_screen();
     printHeader();
     printSectionTitle("DELETE A PATIENT");
 
@@ -426,7 +443,7 @@ void deletePatient(Node** root) {
 }
 
 void menu() {
-    system("cls");
+    clear_screen();
     printHeader();
     printf(C_CYAN "  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n" C_RESET);
     printf(C_YELLOW C_BOLD "  [||]  1 ||  Insert Patient + Prescription  [||]\n" C_RESET);
@@ -451,7 +468,7 @@ int main() {
 
         switch (choice) {
             case 1: {
-                system("cls");
+                clear_screen();
                 printHeader();
                 printSectionTitle("INSERT PATIENT");
                 int patientCode;
@@ -508,14 +525,14 @@ int main() {
                 deletePatient(&root);
                 break;
             case 6:
-                system("cls");
+                clear_screen();
                 printHeader();
                 printf(C_GREEN C_BOLD "\n  Thank you for using SUNIB Pharmacy!\n  Have a nice day :)\n\n" C_RESET);
-                Sleep(1500);
+                sleep_ms(1500);
                 break;
             default:
                 printf(C_RED "\n  [!] Invalid choice.\n" C_RESET);
-                Sleep(700);
+                sleep_ms(700);
                 break;
         }
     } while (choice != 6);
