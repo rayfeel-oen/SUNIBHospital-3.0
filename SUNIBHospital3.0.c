@@ -177,14 +177,14 @@ void printHeader() {
     printf(C_CYAN C_BOLD);
     printf("  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n");
     printf("  |                                           |\n");
-    printf("  |   ____  _   _  _   _ ___ ____            |\n");
-    printf("  |  / ___|| | | || \\ | |_ _| __ )           |\n");
-    printf("  |  \\___ \\| | | ||  \\| || ||  _ \\           |\n");
-    printf("  |   ___) | |_| || |\\  || || |_) |          |\n");
-    printf("  |  |____/ \\___/ |_| \\_|___|____/           |\n");
+    printf("  |        ____  _   _  _   _ ___ ____        |\n");
+    printf("  |       / ___|| | | || \\ | |_ _| __ )       |\n");
+    printf("  |       \\___ \\| | | ||  \\| || ||  _ \\       |\n");
+    printf("  |        ___) | |_| || |\\  || || |_) |      |\n");
+    printf("  |       |____/ \\___/ |_| \\_|___|____/       |\n");
     printf("  |                                           |\n");
-    printf("  |      Pharmacy Management System v2       |\n");
-    printf("  |        Powered by AVL Tree (C)           |\n");
+    printf("  |        Pharmacy Management System v2      |\n");
+    printf("  |          Powered by AVL Tree (C)          |\n");
     printf("  |                                           |\n");
     printf("  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+\n");
     printf(C_RESET "\n");
@@ -370,6 +370,36 @@ void viewByPrefix(Node* root) {
     getchar();
 }
 
+void searchPatient(Node* root) {
+    clear_screen();
+    printHeader();
+    printSectionTitle("SEARCH PATIENT");
+
+    int patientCode, valid = 0;
+    do {
+        printf("  Input patient code to search [1-500]: ");
+        if (scanf("%d", &patientCode) == 1 && patientCode >= 1 && patientCode <= 500) valid = 1;
+        else printf(C_RED "  [!] Invalid. Try again.\n" C_RESET);
+        int buf; while ((buf = getchar()) != '\n' && buf != EOF);
+    } while (!valid);
+
+    loadingAnimation("Searching patient", 500);
+    Node* found = existingMember(root, patientCode);
+    if (found == NULL) {
+        printf(C_RED "\n  [!] Patient with code %d not found.\n" C_RESET, patientCode);
+    } else {
+        printf(C_GREEN "\n  Patient found:\n" C_RESET);
+        printf("  ID: %d\n", found->key);
+        printf("  Name: %s\n", found->name);
+        printf("  Email: %s\n", found->email);
+        printf("  Phone: %s\n", found->phoneNum);
+        printf("  Visitations: %d\n", found->visitation);
+    }
+
+    printf("\n  Press Enter to continue...");
+    getchar();
+}
+
 Node* minValueNode(Node* node) {
     Node* cur = node;
     while (cur->left != NULL) cur = cur->left;
@@ -517,10 +547,10 @@ int main() {
                 viewByPrefix(root);
                 break;
             case 4:
-                // searchPatient(root);
-                printf(C_YELLOW "\n  [Search - coming from teammate]\n" C_RESET);
-                printf("  Press Enter to continue...");
-                getchar();
+                searchPatient(root);
+                // printf(C_YELLOW "\n  [Search - coming from teammate]\n" C_RESET);
+                // printf("  Press Enter to continue...");
+                // getchar();
                 break;
             case 5:
                 deletePatient(&root);
