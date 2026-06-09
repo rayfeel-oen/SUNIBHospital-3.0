@@ -12,7 +12,10 @@
 #define C_RED     "\033[31m"
 #define C_WHITE   "\033[97m"
 
-// Universal Windows and UNIX (Suggested by Sonnet 4.6 Low)
+// Cross-platform compatibility recap:
+// - Windows uses Sleep(ms) and "cls".
+// - Linux/macOS use usleep(ms * 1000) and "clear".
+// - Call sleep_ms() and clear_screen() everywhere below.
 #ifdef _WIN32
     #include <windows.h>
     #define sleep_ms(ms) Sleep(ms)
@@ -26,9 +29,6 @@
 #else
     #define clear_screen() system("clear")
 #endif
-
-// And replace all Sleep() calls with sleep_ms().
-// system("cls") with clear_screen().
 
 typedef struct Node {
     int key;
