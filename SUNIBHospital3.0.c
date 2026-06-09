@@ -12,7 +12,8 @@
 #define C_RED     "\033[31m"
 #define C_WHITE   "\033[97m"
 
-// Cross-platform compatibility recap:
+// Universal Windows and UNIX (Suggested by Sonnet 4.6 Low)
+// Cross-platform compatibility recap: (Recapped by GitHub Copilot PR Tools)
 // - Windows uses Sleep(ms) and "cls".
 // - Linux/macOS use usleep(ms * 1000) and "clear".
 // - Call sleep_ms() and clear_screen() everywhere below.
