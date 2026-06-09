@@ -1,0 +1,266 @@
+ +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  |                                           |
+  |        ____  _   _  _   _ ___ ____        |
+  |       / ___|| | | || \ | |_ _| __ )       |
+  |       \___ \| | | ||  \| || ||  _ \       |
+  |        ___) | |_| || |\  || || |_) |      |
+  |       |____/ \___/ |_| \_|___|____/       |
+  |                                           |
+  |        Pharmacy Management System v2      |
+  |          Powered by AVL Tree (C)          |
+  |                                           |
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  [||]  1 ||  Insert Patient + Prescription  [||]
+  [||]  2 ||  View All Patients             [||]
+  [||]  3 ||  View Patients by ID Prefix    [||]
+  [||]  4 ||  Search Patient                [||]
+  [||]  5 ||  Delete a Patient              [||]
+  [||]  6 ||  Exit                          [||]
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Input your choice > 1
+
+   +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  |                                           |
+  |        ____  _   _  _   _ ___ ____        |
+  |       / ___|| | | || \ | |_ _| __ )       |
+  |       \___ \| | | ||  \| || ||  _ \       |
+  |        ___) | |_| || |\  || || |_) |      |
+  |       |____/ \___/ |_| \_|___|____/       |
+  |                                           |
+  |        Pharmacy Management System v2      |
+  |          Powered by AVL Tree (C)          |
+  |                                           |
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  +-------------------------------------------+
+    >> INSERT PATIENT
+  +-------------------------------------------+
+  Input patient code [1-500]: 1
+  Register membership?[y|n]: y
+  [v] Registering patient - Done!
+  Input name[5-30][Mr. |Mrs. ]: Mr. Benjamin
+  Input email[10-20][email format]: benji@ben.com
+  Input phone number[10-13][numeric]: 0851234567890
+  Number of visit(s) = 1
+
+  +==============================================+
+  ||  No  | Medicine Name        |    Price    ||
+  +==============================================+
+  || 1   | Paracetamol          |  Rp. 5000   ||
+  || 2   | Diapet               |  Rp. 7000   ||
+  || 3   | Oralit               |  Rp. 3500   ||
+  || 4   | Paratusin            |  Rp. 5500   ||
+  || 5   | OB Herbal            |  Rp. 6000   ||
+  || 6   | Ibuprofen            |  Rp. 5500   ||
+  || 7   | Aspirin              |  Rp. 8000   ||
+  || 8   | Morphine             |  Rp. 10000  ||
+  || 9   | Cetirizine           |  Rp. 4000   ||
+  || 10  | Multivitamins        |  Rp. 4500   ||
+  +==============================================+
+  Input medicine[1-10]: 1
+  Input quantity[>=1]: 1
+  Add another medicine?[y|n]: y
+  Input medicine[1-10]: 2
+  Input quantity[>=1]: 2
+  Add another medicine?[y|n]: n
+
+  Order Summary:
+  Paracetamol          - 1x = Rp.5000
+  Diapet               - 2x = Rp.14000
+  Total Price: Rp.19000.00
+
+  Press Enter to continue...
+
+---
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  |                                           |
+  |        ____  _   _  _   _ ___ ____        |
+  |       / ___|| | | || \ | |_ _| __ )       |
+  |       \___ \| | | ||  \| || ||  _ \       |
+  |        ___) | |_| || |\  || || |_) |      |
+  |       |____/ \___/ |_| \_|___|____/       |
+  |                                           |
+  |        Pharmacy Management System v2      |
+  |          Powered by AVL Tree (C)          |
+  |                                           |
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  [||]  1 ||  Insert Patient + Prescription  [||]
+  [||]  2 ||  View All Patients             [||]
+  [||]  3 ||  View Patients by ID Prefix    [||]
+  [||]  4 ||  Search Patient                [||]
+  [||]  5 ||  Delete a Patient              [||]
+  [||]  6 ||  Exit                          [||]
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Input your choice > 2
+
+  +-------------------------------------------+
+    >> ALL REGISTERED PATIENTS
+  +-------------------------------------------+
+  +-----+----------+---------------------------+----------+
+  | No  | Pat. ID  | Name                      | Visits   |
+  +-----+----------+---------------------------+----------+
+  | 1   | ID: 1     | Mr. Benjamin              | Visit: 1
+  +-----+----------+---------------------------+----------+
+
+  Total patients: 1
+
+  Press Enter to continue...
+
+---
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  |                                           |
+  |        ____  _   _  _   _ ___ ____        |
+  |       / ___|| | | || \ | |_ _| __ )       |
+  |       \___ \| | | ||  \| || ||  _ \       |
+  |        ___) | |_| || |\  || || |_) |      |
+  |       |____/ \___/ |_| \_|___|____/       |
+  |                                           |
+  |        Pharmacy Management System v2      |
+  |          Powered by AVL Tree (C)          |
+  |                                           |
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  [||]  1 ||  Insert Patient + Prescription  [||]
+  [||]  2 ||  View All Patients             [||]
+  [||]  3 ||  View Patients by ID Prefix    [||]
+  [||]  4 ||  Search Patient                [||]
+  [||]  5 ||  Delete a Patient              [||]
+  [||]  6 ||  Exit                          [||]
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Input your choice > 3
+
+  +-------------------------------------------+
+    >> VIEW PATIENTS BY ID PREFIX
+  +-------------------------------------------+
+  Input patient ID prefix: 1
+  [v] Searching prefix - Done!
+
+  Patients with ID starting with "1":
+
+  +-----+----------+---------------------------+----------+
+  | No  | Pat. ID  | Name                      | Visits   |
+  +-----+----------+---------------------------+----------+
+  | 1   | ID: 1     | Mr. Benjamin              | Visit: 1
+  +-----+----------+---------------------------+----------+
+
+  Found: 1 patient(s).
+
+  Press Enter to continue...
+
+---
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  |                                           |
+  |        ____  _   _  _   _ ___ ____        |
+  |       / ___|| | | || \ | |_ _| __ )       |
+  |       \___ \| | | ||  \| || ||  _ \       |
+  |        ___) | |_| || |\  || || |_) |      |
+  |       |____/ \___/ |_| \_|___|____/       |
+  |                                           |
+  |        Pharmacy Management System v2      |
+  |          Powered by AVL Tree (C)          |
+  |                                           |
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  [||]  1 ||  Insert Patient + Prescription  [||]
+  [||]  2 ||  View All Patients             [||]
+  [||]  3 ||  View Patients by ID Prefix    [||]
+  [||]  4 ||  Search Patient                [||]
+  [||]  5 ||  Delete a Patient              [||]
+  [||]  6 ||  Exit                          [||]
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Input your choice > 4
+
+  +-------------------------------------------+
+    >> SEARCH PATIENT
+  +-------------------------------------------+
+  Input patient code to search [1-500]: 1
+  [v] Searching patient - Done!
+
+  Patient found:
+  ID: 1
+  Name: Mr. Benjamin
+  Email: benji@ben.com
+  Phone: 0851234567890
+  Visitations: 1
+
+  Press Enter to continue...
+
+---
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  |                                           |
+  |        ____  _   _  _   _ ___ ____        |
+  |       / ___|| | | || \ | |_ _| __ )       |
+  |       \___ \| | | ||  \| || ||  _ \       |
+  |        ___) | |_| || |\  || || |_) |      |
+  |       |____/ \___/ |_| \_|___|____/       |
+  |                                           |
+  |        Pharmacy Management System v2      |
+  |          Powered by AVL Tree (C)          |
+  |                                           |
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  [||]  1 ||  Insert Patient + Prescription  [||]
+  [||]  2 ||  View All Patients             [||]
+  [||]  3 ||  View Patients by ID Prefix    [||]
+  [||]  4 ||  Search Patient                [||]
+  [||]  5 ||  Delete a Patient              [||]
+  [||]  6 ||  Exit                          [||]
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Input your choice > 5
+
+  +-------------------------------------------+
+    >> DELETE A PATIENT
+  +-------------------------------------------+
+  Input patient code to delete [1-500]: 1
+
+  Deleting: Mr. Ben (ID: 1)...
+  [v] Removing from AVL Tree - Done!
+
+  [v] Patient successfully deleted.
+
+  Press Enter to continue...
+
+---
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  |                                           |
+  |        ____  _   _  _   _ ___ ____        |
+  |       / ___|| | | || \ | |_ _| __ )       |
+  |       \___ \| | | ||  \| || ||  _ \       |
+  |        ___) | |_| || |\  || || |_) |      |
+  |       |____/ \___/ |_| \_|___|____/       |
+  |                                           |
+  |        Pharmacy Management System v2      |
+  |          Powered by AVL Tree (C)          |
+  |                                           |
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+  [||]  1 ||  Insert Patient + Prescription  [||]
+  [||]  2 ||  View All Patients             [||]
+  [||]  3 ||  View Patients by ID Prefix    [||]
+  [||]  4 ||  Search Patient                [||]
+  [||]  5 ||  Delete a Patient              [||]
+  [||]  6 ||  Exit                          [||]
+  +=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+
+
+  Input your choice > 6
+
+  Thank you for using SUNIB Pharmacy!
+  Have a nice day :)
